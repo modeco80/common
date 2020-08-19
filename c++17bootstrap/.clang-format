@@ -1,12 +1,13 @@
-# Clang-Format file for all of my projects
-# Partially generated using https://github.com/mikr/whatstyle ,
+# Clang-Format file for my C++ projects
+# Partially generated using https://github.com/mikr/whatstyle,
 # partially hand tuned to my liking
 #
 
+# google style is the closest unfortunately
 BasedOnStyle: Google
 
 # I think if these two aren't the same
-# it won't 
+# it won't indent with tabs even with UseTab set to Always
 TabWidth: 4
 IndentWidth: 4
 
@@ -19,8 +20,8 @@ AllowShortBlocksOnASingleLine: false
 AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Never
 
-BinPackArguments: false
-BinPackParameters: false
+BinPackArguments: true
+BinPackParameters: true
 BreakConstructorInitializers: BeforeColon
 BreakStringLiterals: false
 
@@ -32,16 +33,28 @@ CompactNamespaces: false
 
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
 ContinuationIndentWidth: 0
-Cpp11BracedListStyle: true
-FixNamespaceComments: false
+
+# turning this on causes major issues with initalizer lists,
+# turn it off
+Cpp11BracedListStyle: false
+
+# this is turned on to allow something like:
+#
+#	T MyTValue {
+#		initalizer list...
+#	};
+SpaceBeforeCpp11BracedList: true
+
+FixNamespaceComments: true
 
 NamespaceIndentation: All
-ReflowComments: false
+ReflowComments: true
 
 # no sorting
 SortIncludes: false
 SortUsingDeclarations: false
 
-# yeah no
+
+SpacesInSquareBrackets: false
 SpaceBeforeParens: Never
 SpacesBeforeTrailingComments: 1
